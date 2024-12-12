@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const urlSchema = new mongoose.Schema({
-  originalUrl: {
+  url: {
     type: String,
     required: true,
   },
@@ -16,4 +16,4 @@ const urlSchema = new mongoose.Schema({
   }
 })
 
-export default mongoose.model(urlSchema)
+export default mongoose.model('url', urlSchema)
