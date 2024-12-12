@@ -38,10 +38,10 @@ urlRouter.post('/shorten', newUrlParser, (req, res, next) => __awaiter(void 0, v
         const shortUrl = shortid_1.default.generate();
         const url = new URL_1.default({
             url: urlToShorten,
-            shortUrl
+            shortUrl,
+            created: Date.now()
         });
         yield url.save();
-        console.log('saved!', url);
         res.status(200).send({
             url: url.url,
             shortUrl: url.shortUrl,
@@ -55,7 +55,6 @@ urlRouter.post('/shorten', newUrlParser, (req, res, next) => __awaiter(void 0, v
 // Route for retrieving a list of the urls in the database
 urlRouter.get('/urls', (_req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const urlDocs = yield URL_1.default.find({});
-    console.log('found');
     try {
         const urls = urlDocs.map(doc => {
             const url = schemas_1.urlSchema.parse({

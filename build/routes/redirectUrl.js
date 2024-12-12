@@ -22,7 +22,6 @@ redirectRouter.get('/:shortUrl', (req, res, next) => __awaiter(void 0, void 0, v
         // Attempts to retrieve the url from the cache and redirect to it
         const fromCache = cache_1.default.get(shortUrl);
         if (fromCache && typeof fromCache === 'string') {
-            console.log('Cache money hit!');
             res.redirect(fromCache);
         }
         else {
@@ -31,7 +30,6 @@ redirectRouter.get('/:shortUrl', (req, res, next) => __awaiter(void 0, void 0, v
             if (url) {
                 // The url is put into the cache and redirected to it
                 cache_1.default.set(url.shortUrl, url.url);
-                console.log('cache money set!');
                 res.redirect(url.url);
             }
             else {
