@@ -6,6 +6,10 @@ const app = express()
 
 app.use(express.json())
 
+app.use('/ping', (_req, res) => {
+  res.send('pong')
+})
+
 app.use('/api', urlRouter)
 
 app.use(redirectRouter)
