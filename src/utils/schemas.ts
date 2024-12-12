@@ -5,3 +5,9 @@ import { z } from 'zod'
 export const newUrlSchema = z.object({
   url: z.string().url()
 })
+
+export const urlSchema = z.object({
+  url: z.string().url(),
+  shortUrl: z.string(),
+  created: z.string()
+})

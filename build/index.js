@@ -1,24 +1,41 @@
-import app from './app.js';
-import config from './utils/config.js';
-import mongoose from 'mongoose';
-async function startServer() {
-    // For attempting connection to the database
-    try {
-        console.log('connecting to MongoDB...');
-        await mongoose.connect(config.MONGODB_URL);
-        console.log('Connected');
-    }
-    catch (error) {
-        let errorMessage = 'Error connecting to database: ';
-        if (error instanceof Error) {
-            errorMessage += error.message;
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const app_1 = __importDefault(require("./app"));
+const config_1 = __importDefault(require("./utils/config"));
+const mongoose_1 = __importDefault(require("mongoose"));
+function startServer() {
+    return __awaiter(this, void 0, void 0, function* () {
+        // For attempting connection to the database
+        try {
+            console.log('connecting to MongoDB...');
+            yield mongoose_1.default.connect(config_1.default.MONGODB_URL);
+            console.log('Connected');
         }
-        console.log(errorMessage);
-    }
-    app.listen(config.PORT || 3000, () => {
-        console.log('app listening on port ' + config.PORT);
+        catch (error) {
+            let errorMessage = 'Error connecting to database: ';
+            if (error instanceof Error) {
+                errorMessage += error.message;
+            }
+            console.log(errorMessage);
+        }
+        app_1.default.listen(config_1.default.PORT || 3000, () => {
+            console.log('app listening on port ' + config_1.default.PORT);
+        });
     });
 }
+// For starting the in memory cache
 // Handle the promise returned by startServer
 startServer().catch((error) => {
     console.error('Failed to start server:', error);

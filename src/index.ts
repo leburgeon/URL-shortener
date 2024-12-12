@@ -21,6 +21,9 @@ async function startServer() {
   })
 }
 
+// For starting the in memory cache
+
+
 // Handle the promise returned by startServer
 startServer().catch((error) => {
   console.error('Failed to start server:', error)

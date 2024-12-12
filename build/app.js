@@ -1,6 +1,16 @@
-import express from 'express';
-const app = express();
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const urlRouter_1 = __importDefault(require("./routes/urlRouter"));
+const redirectUrl_1 = __importDefault(require("./routes/redirectUrl"));
+const app = (0, express_1.default)();
+app.use(express_1.default.json());
 app.use('/ping', (_req, res) => {
     res.send('pong');
 });
-export default app;
+app.use('/api', urlRouter_1.default);
+app.use(redirectUrl_1.default);
+exports.default = app;
