@@ -10,5 +10,5 @@ exports.newUrlSchema = zod_1.z.object({
 exports.urlSchema = zod_1.z.object({
     url: zod_1.z.string().url(),
     shortUrl: zod_1.z.string(),
-    created: zod_1.z.string()
+    created: zod_1.z.number()
 });

@@ -50,7 +50,7 @@ urlRouter.get('/urls', async (_req: Request, res: Response<Url[]>, next: NextFun
       const url = urlSchema.parse({
         url: doc.url,
         shortUrl: doc.shortUrl,
-        created: doc.created.toString()
+        created: doc.created
       })
       return url
     })

@@ -15,7 +15,7 @@ const urlSchema = new mongoose_1.default.Schema({
         unique: true
     },
     created: {
-        type: String,
+        type: Number,
         default: Date.now
     }
 });

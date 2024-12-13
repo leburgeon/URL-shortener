@@ -5,7 +5,7 @@ import { newUrlSchema } from './utils/schemas';
 export interface Url {
   url: string, 
   shortUrl: string,
-  created: string
+  created: number
 }
 
 export type NewUrl = z.infer<typeof newUrlSchema>;

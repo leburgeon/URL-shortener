@@ -9,5 +9,5 @@ export const newUrlSchema = z.object({
 export const urlSchema = z.object({
   url: z.string().url(),
   shortUrl: z.string(),
-  created: z.string()
+  created: z.number()
 })

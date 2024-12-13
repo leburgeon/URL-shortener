@@ -60,7 +60,7 @@ urlRouter.get('/urls', (_req, res, next) => __awaiter(void 0, void 0, void 0, fu
             const url = schemas_1.urlSchema.parse({
                 url: doc.url,
                 shortUrl: doc.shortUrl,
-                created: doc.created.toString()
+                created: doc.created
             });
             return url;
         });
