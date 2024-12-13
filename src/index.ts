@@ -2,6 +2,9 @@ import app from './app'
 import config from './utils/config'
 import mongoose from 'mongoose'
 
+console.log('#################################')
+console.log('HEREE')
+
 async function startServer() {
   // For attempting connection to the database
   try {
@@ -16,7 +19,7 @@ async function startServer() {
     console.log(errorMessage)
   }
 
-  app.listen(config.PORT || 3000, () => {
+  app.listen(config.PORT, () => {
     console.log('app listening on port ' + config.PORT)
   })
 }
