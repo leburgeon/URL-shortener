@@ -1,12 +1,15 @@
-# fly.toml app configuration file generated for shorter on 2024-12-13T13:34:05Z
-#
+
+# fly.toml app configuration file generated for url-shorty on 2024-12-13T13:20:52Z
+
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'shorter'
+
+app = 'shorter
 primary_region = 'lhr'
 
 [build]
+
 
 [env]
   PORT = "3000" 
@@ -20,4 +23,6 @@ primary_region = 'lhr'
   processes = ['app']
 
 [[vm]]
+
   size = 'shared-cpu-1x'
+
