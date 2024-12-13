@@ -19,7 +19,7 @@ async function startServer() {
     console.log(errorMessage)
   }
 
-  app.listen(config.PORT || 3000, () => {
+  app.listen(config.PORT, () => {
     console.log('app listening on port ' + config.PORT)
   })
 }
