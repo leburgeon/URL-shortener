@@ -2,6 +2,9 @@ import app from './app'
 import config from './utils/config'
 import mongoose from 'mongoose'
 
+console.log('#################################')
+console.log('HEREE')
+
 async function startServer() {
   // For attempting connection to the database
   try {
