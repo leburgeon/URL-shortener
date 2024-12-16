@@ -1,5 +1,5 @@
 # URL-shortener
-A simple and scalable URL Shortener API built with Node.js, Express, Mongoose, and Memcached.
+A simple and scalable URL Shortener API built with Node.js, Express, Mongoose, and node-cache.
 
 Deployed at: https://shorter.fly.dev/
 
